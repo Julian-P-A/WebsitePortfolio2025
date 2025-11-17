@@ -1,0 +1,55 @@
+---
+interface Logos {
+  title: string;
+  image: string;
+}
+
+const logos: Logos[] = [
+  { title: "Photoshop",  image: "icons/carousel/ps.webp" },
+  { title: "Wordpress", image: "icons/carousel/wp.webp" },
+  { title: "Figma",  image: "icons/carousel/fig.webp" },
+  { title: "HTML",  image: "icons/carousel/html.webp" },
+  { title: "JavaScript",  image: "icons/carousel/js.webp" },
+  { title: "Astro",  image: "icons/carousel/as.webp" },
+  { title: "Ilustrator",  image: "icons/carousel/ai.webp" },
+  { title: "Tailwind",  image: "icons/carousel/tail.webp" },
+  { title: "Typescript",  image: "icons/carousel/ts.webp" },
+];
+---
+
+<div class="scroll-container overflow-hidden flex relative w-full">
+    <ul class="flex animate-infinite-scroll py-25 gap-10">
+        {logos.concat(logos).map((logo, index) => (
+            <li key={index} class="flex-shrink-0 mx-10 w-24 h-14">
+                <img src={logo.image} alt={logo.title} class="h-full w-full object-contain" loading="lazy"/>
+            </li>   
+        ))}
+    </ul>
+</div>
+
+<style>
+    .animate-infinite-scroll {
+        display: flex;
+        white-space: nowrap;
+        animation: infinite-scroll 40s linear infinite;
+    }
+
+    .scroll-container {
+        -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 50%, rgba(0,0,0,0));
+        mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 50%, rgba(0,0,0,0));
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        mask-size: cover;  
+    }
+
+    @keyframes infinite-scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-50% - 20px));
+        }
+    }
+
+</style>
