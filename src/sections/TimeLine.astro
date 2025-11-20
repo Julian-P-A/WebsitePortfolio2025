@@ -1,15 +1,18 @@
-<section class="title-time px-10 md:px-20 py-5 max-w-2xl mx-auto text-center bt-10 mb-10 scroll-mt-20" id="experience">
+<section class="title-time px-10 md:px-20 py-5 max-w-2xl mx-auto inset-0 text-center bt-10 mb-10 scroll-mt-20" id="experience">
+    <div class="absolute top-[140vh] left-[-10%] w-96 h-96 bg-amber-600/20 rounded-full blur-[128px] pointer-events-none mix-blend-screen animate-pulse"></div>
+
     <h2 class="text-3xl font-bold text-white/90 mb-2">A clear journey through my growth as a developer and designer.</h2>
     <p class="text-white/70">A brief look at the stages, roles, and achievements that have shaped my professional path.</p>
 </section>
 
-<div class="timeline-container relative max-w-2xl mx-auto flex flex-col">
+<div class="timeline-container relative max-w-2xl mx-auto flex flex-col overflow-hidden">
     <div class="absolute h-full w-[2px] left-0 overflow-hidden">
         <div id="shooting-star" 
              class="absolute left-[-4px] w-2 h-60 rounded-full shadow-lg"
-             style="background: linear-gradient(to top, #f07d0a, #0F0F0F);">
+             style="background: linear-gradient(to top, #ff6a00,#f07d0a , #0F0F0F);">
         </div>
     </div>
+
         <article class="timeline-content ">
             <h2>01 / WordPress Developer </h2>
             <h3>Freelance</h3>
@@ -79,6 +82,7 @@
 
 <script>
 const star = document.getElementById('shooting-star');
+const star2 = document.getElementById('shooting-star-2');
 const timeline = document.querySelector('.timeline-container');
 
 window.addEventListener('scroll', () => {
