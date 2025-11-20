@@ -1,46 +1,79 @@
-# Astro Starter Kit: Basics
+# 🚀 Portafolio 2025 – Astro + Tailwind + TypeScript
 
-```sh
-pnpm create astro@latest -- --template basics
+Este es el código del **frontend de mi portafolio personal**, desarrollado con **Astro**, **TailwindCSS**, **TypeScript** y uso de **HTML, CSS y JavaScript puro** donde es necesario.
+El sitio se compila como proyecto estático y se publica mediante **GitHub Pages**.
+
+---
+
+## 🧩 Tecnologías usadas
+
+* **Astro** – Framework de generación estática, rápido y optimizado
+* **TailwindCSS** – Estilos con enfoque utilitario
+* **TypeScript** – Tipado estático para mejor mantenibilidad
+* **JavaScript** – Lógica y efectos del frontend
+* **GitHub Pages** – Hosting sin servidor
+* **PNPM / NPM** – Dependencias y scripts del proyecto
+
+---
+
+## 📂 Estructura del proyecto
+
+La organización del proyecto sigue el esquema recomendado por Astro, adaptado a mi flujo de trabajo:
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
+├── public/             # Archivos estáticos servidos directamente
+│   ├── fonts/          # Fuentes
+│   ├── icons/          # Iconos del proyecto
+│   ├── imgs/           # Imágenes públicas
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│
+├── src/                # Código fuente del sitio
+│   ├── assets/         # Imágenes y recursos utilizados desde código
+│   ├── components/     # Componentes reutilizables
+│   ├── layouts/        # Plantillas globales
+│   ├── pages/          # Rutas del sitio
+│   ├── sections/       # Secciones independientes del portafolio
+│   └── styles/         # Estilos globales o utilitarios
+│
+├── astro.config.mjs    # Configuración principal de Astro
+├── package.json        # Dependencias y scripts
+└── .gitignore
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🧞 Scripts disponibles
 
-All commands are run from the root of the project, from a terminal:
+Desde la raíz del proyecto puedes ejecutar:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Comando           | Acción                                               |
+| ----------------- | ---------------------------------------------------- |
+| `npm install`     | Instala todas las dependencias                       |
+| `npm run dev`     | Ejecuta el proyecto en modo desarrollo (`localhost`) |
+| `npm run build`   | Genera el sitio listo para producción en `/dist`     |
+| `npm run preview` | Previsualiza el build antes de desplegar             |
 
-## 👀 Want to learn more?
+> Puedes usar igualmente `pnpm`, `npm` o `yarn` según tu preferencia.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 🌐 Despliegue en GitHub Pages
+
+El proyecto se construye como un sitio estático y se publica en **GitHub Pages** mediante **GitHub Actions**.
+Cada cambio enviado al repositorio puede generar automáticamente una nueva versión del sitio.
+
+---
+
+## 📚 Recursos útiles
+
+* Documentación oficial de Astro
+  [https://docs.astro.build](https://docs.astro.build)
+* Guía de TailwindCSS
+  [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
+* Referencia oficial de TypeScript
+  [https://www.typescriptlang.org/docs](https://www.typescriptlang.org/docs)
+
+---
+
+✨ *Portafolio creado con diseño, rendimiento y enfoque profesional en mente.*

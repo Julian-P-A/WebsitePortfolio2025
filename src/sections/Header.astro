@@ -3,45 +3,63 @@
     <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
 
     <div class="menu-mobile fixed h-[100vh] inset-0 bg-white text-black flex flex-col items-center justify-center space-y-10 
-    opacity-0 pointer-events-none transition-all duration-300 ease-in-out
-    peer-checked:opacity-100 peer-checked:pointer-events-auto ">
+    opacity-0 pointer-events-none transition-all duration-300 ease-in-out peer-checked:opacity-100 peer-checked:pointer-events-auto ">
 
-        <button onclick="document.getElementById('mobile-menu-toggle').click()" class="menu fixed top-6 right-8 md:hidden !text-[15px] !text-white bg-black px-4 py-[5px] rounded-lg hover:scale-102  duration-300 ease-in-out">Close</button> 
+        <button onclick="closeMenu()" class="menu fixed top-6 right-8 md:hidden !text-[15px] 
+        !text-white bg-black px-4 py-[5px] rounded-lg hover-anim">Close</button> 
 
-        <a href="#home" class="!text-2xl hover:scale-105  " onclick="document.getElementById('mobile-menu-toggle').click()">
-            Home
-        </a>
-        <a href="#projects" class="!text-2xl hover:scale-105 " onclick="document.getElementById('mobile-menu-toggle').click()">
-            Projects
-        </a>
-        <a href="#experience" class="!text-2xl hover:scale-105 " onclick="document.getElementById('mobile-menu-toggle').click()">
-            Experience
-        </a>
-        <a href="#contact" class="fixed top-[90vh] self-auto bg-black text-white px-6 py-2 rounded-lg hover:scale-105 " onclick="document.getElementById('mobile-menu-toggle').click()">
-            Contact Me
-        </a>
+        <a href="#home" class="!text-2xl hover-anim" onclick="closeMenu()">Home</a>
+        <a href="#projects" class="!text-2xl hover-anim" onclick="closeMenu()">Projects</a>
+        <a href="#experience" class="!text-2xl hover-anim" onclick="closeMenu()">Experience</a>
+        <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto." 
+        class="fixed top-[90vh] self-auto bg-black text-white px-6 py-2 rounded-lg hover-anim" onclick="closeMenu()" target="_blank" 
+        rel="noopener noreferrer">Contact Me</a>
 
     </div>
 
     <div class="logo w-1/4 flex justify-start text-white ">
-        <a href="#home" class="logo-link !font-semibold !text-xl hover:scale-102  duration-300 ease-in-out">JulianPinzon.</a>
+        <a href="#home" class="logo-link hover-anim !font-semibold !text-xl">JulianPinzon.</a>
     </div>
 
     <ul class="nav-links hidden md:flex  space-x-10 w-1/2 justify-center text-white/70 ">
-        <li><a href="#home" class="nav-link inline-block relative group hover:text-white hover:scale-102  duration-300 ease-in-out">Home
-            <span class="absolute left-0 bottom-0 w-0 h-[1px] bg-white -all duration-300 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a href="#projects" class="nav-link inline-block relative group hover:text-white hover:scale-102  duration-300 ease-in-out">Projects
-            <span class="absolute left-0 bottom-0 w-0 h-[1px] bg-white -all duration-300 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a href="#experience" class="nav-link inline-block relative group hover:text-white hover:scale-102  duration-300 ease-in-out">Experience
-            <span class="absolute left-0 bottom-0 w-0 h-[1px] bg-white -all duration-300 ease-in-out group-hover:w-full"></span></a></li>  
+        <li><a href="#home" class="nav-link inline-block relative group hover:text-white hover-anim">Home
+            <span class="underline-hover"></span></a></li>
+        <li><a href="#projects" class="nav-link inline-block relative group hover:text-white hover-anim">Projects
+            <span class="underline-hover"></span></a></li>
+        <li><a href="#experience" class="nav-link inline-block relative group hover:text-white hover-anim">Experience
+            <span class="underline-hover"></span></a></li>  
     </ul>
 
     <div class="contact-buttom hidden md:flex w-1/4 flex justify-end ">
-        <a href="#contact" class="contact-link bg-white px-4 py-[5px] rounded-lg hover:scale-102  duration-300 ease-in-out">Contact Me</a>    
+        <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto."
+        class="contact-link bg-white px-4 py-[5px] rounded-lg hover-anim" target="_blank" rel="noopener noreferrer">Contact Me</a>    
     </div> 
     
-     <button onclick="document.getElementById('mobile-menu-toggle').click()" class="menu md:hidden bg-white px-4 py-[5px] rounded-lg hover:scale-102  duration-300 ease-in-out">Menu</button>    
+     <button type="button" onclick="closeMenu()" class="menu md:hidden bg-white px-4 py-[5px] rounded-lg hover-anim">Menu</button>    
 
 </nav>
+
+<style>
+    .underline-hover  {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 0;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .group:hover .underline-hover{
+        width: 100%;
+    }
+</style> 
+
+<script>
+    window.closeMenu = () => {
+        document.getElementById('mobile-menu-toggle').click()
+    }
+</script>
+
 
 
