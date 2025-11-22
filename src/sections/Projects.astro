@@ -1,6 +1,13 @@
 ---
+    interface Project {
+        title: string;
+        description: string;
+        image_url: string;
+        url: string;
+    }
+
     const WORK_URL = "https://mi-backend.julian-jcpa.workers.dev/projects";
-    let projects = [];
+    let projects: Project[] = [];
 
     try {
       const res = await fetch(WORK_URL, {
@@ -16,23 +23,25 @@
     } 
 ---
 
-<section class="projects w-full flex flex-col items-center justify-center px-8 md:px-10 mt-20 mb-20" id="projects">
-    <div class="section-header w-full flex flex-col items-center justify-center mb-10 gap-2">
+<section class="projects w-full flex flex-col items-center justify-center px-8 md:px-10 mt-20 mb-20 py-10" id="projects">
+    <div class="section-header w-full flex flex-col items-center text-center justify-center mb-10 gap-2">
         <h3 class="section-subtitle relative text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600 !font-semibold text-xl">From Colombia / Building for anywhere</h3>
         <h2 class="section-title text-3xl font-bold text-white/90 mb-2">Frontend development
         & strategic ui/ux design</h2>
     </div>
 
-    <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 w-full max-w-6xl">
-         {projects.legth > 0 ? (
-            projects.map((project) => (
-            <div class="project-card relative group overflow-hidden rounded-lg cursor-pointer flex flex-col ">
-                <img src={project.image} alt={project.title} class="project-bg absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300 ease-in-out" loading="lazy"/>
-                <h4 class="project-title relative z-10 p-4 text-white font-semibold text-lg bg-black/60 backdrop-blur-sm">{project.title}</h4>
-                <p class="project-description relative z-10 p-4 text-white text-sm bg-black/60 backdrop-blur-sm">{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-button bg-black text-white px-6 py-2 rounded-lg hover-anim"></a>
-            </div>
-            ))
+    <div class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl">
+         {projects.length > 0 ? (
+                projects.map((project) => (
+                <div class="project-card relative group overflow-hidden rounded-lg cursor-pointer flex flex-col w-full h-64 md:h-80">
+                    <img src={project.image_url} alt={project.title} class="project-bg absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300 ease-in-out" loading="lazy"/>
+                    <div class="project-overlay translate-y-[22vh] group-hover:translate-y-[14vh] group-hover:bg-gradient-to-t from-orange-500/90 to-orange-500/0 transition-all duration-300 ease-in-out flex flex-col items-start text-left gap-3 p-8">
+                        <h4 class="project-title relative z-10 !text-xl text-white !font-semibold ">{project.title}</h4>
+                        <p class="project-description relative z-10  text-white/90">{project.description}</p>
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" class="project-button z-10 bg-white text-black px-6 py-2 my-2 rounded-lg hover-anim">Visit project</a>
+                    </div>
+                </div>
+                ))
         ) : (
             <p class="text-white/70 text-center col-span-full py-10">
              No hay proyectos aún.
