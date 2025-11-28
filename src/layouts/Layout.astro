@@ -6,7 +6,26 @@
 		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
 		<title>Portfolio Julian Pinzon</title>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      const cursor = document.getElementById('cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
+      const hoverElements = document.querySelectorAll('a, button, h1, h2, img, .group, .inner-timeline');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '30px';
+                cursor.style.height = '30px';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '10px';
+                cursor.style.height = '10px';
+            });
+        });
+    </script>
     <!-- SEO meta -->
     <meta name="description" content="Julian Pinzon - Portafolio" />
     <meta
@@ -21,6 +40,7 @@
 	</head>
 	<body>
 		<slot />
+    <div id="cursor"></div>
 	</body>
 </html>
 
@@ -31,6 +51,7 @@
 
 	html,
 	body {
+    cursor: none;
     background-color: #0f0f0f;
 		margin: 0;
 		width: 100%;
@@ -38,7 +59,32 @@
     scroll-behavior: smooth;
 	}
 
-	/* ==== FUENTES ==== */
+  #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: difference; /* La magia de la inversión de color */
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        body:hover #cursor {
+            opacity: 1;
+        }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter_18pt-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+  }
+
   @font-face {
     font-family: "Inter";
     src: url("/fonts/Inter_18pt-Regular.ttf") format("truetype");
@@ -60,18 +106,43 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter_18pt-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+  }
+
+
   /* ==== TIPOGRAFÍA GLOBAL ==== */
-  h3, h4, h5, h6, p, a, li, span { 
+  h3, h4, h5, h6, p, li, span { 
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    font-size: 14px;
+  }
+
+  p{ 
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, 0.75);
+  }
+
+  a { 
     font-family: "Inter", sans-serif;
     font-weight: 400;
     letter-spacing: -0.025em;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   h1,h2{
 	font-family: "Inter", sans-serif;
-	font-weight: 600;
+	font-weight: 400;
   letter-spacing: -0.025em;
   font-size: 30px;
   }
 </style>
+
+

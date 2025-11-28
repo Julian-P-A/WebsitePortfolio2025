@@ -23,23 +23,28 @@
     } 
 ---
 
-<section class="projects w-full flex flex-col items-center justify-center px-8 md:px-10 mt-20 mb-20 py-10" id="projects">
-    <div class="section-header w-full flex flex-col items-center text-center justify-center mb-10 gap-2">
-        <h3 class="section-subtitle relative text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600 !font-semibold text-xl">From Colombia / Building for anywhere</h3>
+<section class="projects mt-20 max-w-2xl mx-auto flex flex-col text-center scroll-mt-20 gap-10" id="projects">
+    <div class="section-header px-4 md:px-0 py-5 max-w-2xl mx-auto inset-0 text-center bt-10 mb-10">
+        <h3 class="section-subtitle text-white/60 !text-[1rem] font-medium">From Colombia / Building for anywhere</h3>
         <h2 class="section-title text-3xl font-bold text-white/90 mb-2">Frontend development
         & strategic ui/ux design</h2>
+        <p class="section-description px-0 md:px-20">A selection of my recent work, showcasing a blend of frontend development and strategic UI/UX design to create engaging digital experiences.</p>
     </div>
 
-    <div class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl">
+    <div class="projects relative flex flex-col gap-5">
+        <div class="absolute rounded-lg h-full w-[6px] left-0 overflow-hidden">
+        <div id="shooting-star2" 
+             class="absolute left-[2px] w-[4px] h-60 rounded-full shadow-lg"
+             style="background: linear-gradient(to top, #ffffff,#6b6b6b , #0F0F0F);">
+        </div>
+    </div>
          {projects.length > 0 ? (
-                projects.map((project) => (
-                <div class="project-card relative group overflow-hidden rounded-lg cursor-pointer flex flex-col w-full h-64 md:h-80">
-                    <img src={project.image_url} alt={project.title} class="project-bg absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300 ease-in-out" loading="lazy"/>
-                    <div class="project-overlay translate-y-[22vh] group-hover:translate-y-[14vh] group-hover:bg-gradient-to-t from-orange-500/90 to-orange-500/0 transition-all duration-300 ease-in-out flex flex-col items-start text-left gap-3 p-8">
-                        <h4 class="project-title relative z-10 !text-xl text-white !font-semibold ">{project.title}</h4>
-                        <p class="project-description relative z-10  text-white/90">{project.description}</p>
-                        <a href={project.url} target="_blank" rel="noopener noreferrer" class="project-button z-10 bg-white text-black px-6 py-2 my-2 rounded-lg hover-anim">Visit project</a>
-                    </div>
+                projects.slice( ).reverse().map((project) => (
+                <div class="project-card flex flex-col items-start  gap-[0.2rem] px-8 py-5 w-full text-left">
+                    <h5 class="text-base relative leading-4 text-white/60 font-medium">0{project.id} / Project</h5>
+                    <h4 class="project-title text-[2rem] text-white/90 font-semibold">{project.title}</h4>
+                    <p class="project-description">{project.description}</p>
+                    <img src={project.image_url} alt={project.title} class="project-image w-[450px] max-w-full my-10 mx-auto h-auto rounded-lg" loading="lazy"/>
                 </div>
                 ))
         ) : (
@@ -49,3 +54,24 @@
         )}
     </div>    
 </section>
+
+<script>
+const starsecond = document.getElementById('shooting-star2');
+const projects = document.querySelector('.projects');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const timelineTop = projects.offsetTop;
+    const timelineHeight = projects.offsetHeight;
+
+    let progress = (scrollTop + viewportHeight/2 - timelineTop) / timelineHeight;
+
+    progress = Math.min(Math.max(progress, -0.2), 1.2);
+
+    const topPos = progress * timelineHeight - starsecond.offsetHeight;
+    starsecond.style.top = `${topPos}px`;
+});
+</script>
+
+    

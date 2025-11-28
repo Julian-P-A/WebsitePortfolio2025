@@ -1,19 +1,21 @@
-<footer class="w-full py-6 md:px-10 px-8 flex flex-col justify-between text-white/70 gap-6 bg-gradient-to-t from-orange-600/5 to-transparent">
+<footer class="w-full py-6 mt-10 md:px-10 px-8 flex flex-col justify-between text-white/70 gap-6">
 
-    <h2 class="section-title leading-12 lg:leading-24 !text-[45px] lg:!text-[90px]  text-center relative text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-600 pb-4 mb-10">Let's connect and create something amazing together!</h2>
+    <h2 class="section-title leading-12 lg:leading-24 !text-[45px] lg:!text-[90px] text-center relative font-semibold text-transparent hover:text-white transition-all duration-600
+   outline-none pb-4 mb-10" style="-webkit-text-stroke: 1px white;"><span class="leading-12 lg:leading-24 !text-[45px] lg:!text-[90px] font-semibold text-white">Let's</span> connect <span class="leading-12 lg:leading-24 !text-[45px] lg:!text-[90px] font-semibold text-white">and</span> create <strong class="text-white">something amazing together!</strong></h2>
 
     <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
-        <p>© 2025 Julian Pinzón. All rights reserved.</p>
+        <p><strong class="text-white/90 font-semibold">© 2025 Julian Pinzón.</strong> All rights reserved.</p>
 
-        <div class="social flex flex-row items-center justify-center gap-4">
-            <i data-lucide="instagram" class="icons-media hover-anim"></i>
-            <i data-lucide="paintbrush" class="icons-media hover-anim"></i>
-            <i data-lucide="twitter" class="icons-media hover-anim"></i>
-            <i data-lucide="linkedin" class="icons-media hover-anim"></i>
-            <i data-lucide="message-circle" class="icons-media hover-anim"></i>
+        <div class="social flex flex-row items-center relative group justify-center gap-4">
+            <a href="https://www.instagram.com/julian.c.ariz/" target="_blank" rel="noopener noreferrer"><i data-lucide="instagram" class="icons-media hover-anim" id="instagram"></i></a>
+            <a href="https://www.behance.net/julianariza3" target="_blank" rel="noopener noreferrer"><i data-lucide="paintbrush" class="icons-media hover-anim" id="behance"></i></a>
+            <a href="https://x.com/Julian_c_ariz" target="_blank" rel="noopener noreferrer"><i data-lucide="twitter" class="icons-media hover-anim" id="twitter"></i></a>
+            <a href="https://www.linkedin.com/in/julianjcpa/" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin" class="icons-media hover-anim" id="linkedin"></i></a>
+            <a href="https://github.com/Julian-P-A" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icons-media hover-anim" id="github"></i></a>
+            <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto." target="_blank" rel="noopener noreferrer" id="whatsapp"><i data-lucide="message-circle" class="icons-media hover-anim"></i></a>
         </div>
 
-        <p class="flex items-center gap-1">Designed and built with the <i data-lucide="heart-pulse" class="h-4 w-4 text-orange-500"></i> by me.</p>
+        <p class="flex items-center relative group gap-1 font-display"><strong class="text-white/90 font-semibold ">Designed and built</strong> with the <i data-lucide="heart-pulse" class="h-5 w-5 text-white"></i> by me.</p>
     </div>
 <footer/>
 
@@ -23,7 +25,6 @@
 
 <style>
     .icons-media {
-        color: #ea580c;
         cursor: pointer;
         transition: color 0.3s ease-in-out;
     }
@@ -31,3 +32,4 @@
     .icons-media:hover {
         color: hsl(0, 0%, 90%);
     }
+</style>
