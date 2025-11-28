@@ -1,5 +1,7 @@
-<main class="animate-fade-in-up hero-section h-screen w-full flex flex-col justify-center items-center px-8 md:px-10 rounded-4xl" id="home">
-   
+<main class="animate-fade-in-up hero-section h-screen w-full flex flex-col justify-center items-center px-8 md:px-10 rounded-4xl" id="home" >
+    <img src="/imgs/background3.webp" alt="hero background image" class="hero-bg absolute inset-0 w-full h-full object-cover" fetchpriority="high" decoding="async" />
+    <div class="hero-overlay absolute inset-0">
+
     <div class=" first-part w-full h-1/2 flex flex-col md:flex-row justify-start  md:justify-between items-start md:items-end py-14 md:py-0">
 
         <div class="text-part w-full md:w-1/2 items-left text-white space-y-6 flex flex-col">
@@ -34,13 +36,25 @@
         </div>
 
     </div>
+
+    </div>
         
 </main>
 
 <style>
     .hero-section {
-        background: linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
-        background-image: url('/imgs/background3.webp'),linear-gradient(to top,
+        position: relative;
+        overflow: hidden;
+    }   
+
+    .hero-bg {
+        z-index: 0;
+    }
+
+    .hero-overlay {
+        z-index: 1;
+        background: linear-gradient(
+        to top,
         rgba(255, 255, 255, 0.4) 0%,
         rgba(255, 255, 255, 0.35) 5%,
         rgba(255, 255, 255, 0.25) 10%,
@@ -50,8 +64,5 @@
         rgba(255, 255, 255, 0.01) 30%,
         rgba(255, 255, 255, 0) 35%
         );
-
-        background-size: cover;
-        background-position: center;
     }
 </style>
