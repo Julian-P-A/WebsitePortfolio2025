@@ -59,7 +59,8 @@
     scroll-behavior: smooth;
 	}
 
-  #cursor {
+  @media(min-width:1024px){
+    #cursor {
             position: fixed;
             top: 0;
             left: 0;
@@ -74,9 +75,10 @@
             transition: width 0.3s, height 0.3s;
         }
 
-        body:hover #cursor {
+    body:hover #cursor {
             opacity: 1;
         }
+  }
 
   @font-face {
     font-family: "Inter";
