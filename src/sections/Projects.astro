@@ -25,10 +25,10 @@
     } 
 ---
 
-<section class="projects mt-20 max-w-2xl mx-auto flex flex-col text-center scroll-mt-20 gap-10" id="projects">
+<section class="projects-section mt-20 max-w-2xl mx-auto flex flex-col text-center scroll-mt-20 gap-10" id="projects">
     <div class="section-header px-4 md:px-0 py-5 max-w-2xl mx-auto inset-0 text-center bt-10 mb-10">
-        <h3 class="section-subtitle text-white/60 !text-[1rem] font-medium">From Colombia / Building for anywhere</h3>
-        <h2 class="section-title text-3xl font-bold text-white/90 mb-2">Frontend development
+        <h3 class="section-subtitle !text-white/60 !text-[1rem] !font-medium">From Colombia / Building for anywhere</h3>
+        <h2 class="section-title !text-3xl !font-bold !text-white/90 mb-2">Frontend development
         & strategic ui/ux design</h2>
         <p class="section-description px-0 md:px-20">A selection of my recent work, showcasing a blend of frontend development and strategic UI/UX design to create engaging digital experiences.</p>
     </div>
@@ -43,8 +43,8 @@
          {projects.length > 0 ? (
                 projects.map((project) => (
                 <div class="project-card flex flex-col items-start  gap-[0.2rem] px-8 py-5 w-full text-left">
-                    <h5 class="text-base relative leading-4 text-white/60 font-medium">0{project.id} / Project</h5>
-                    <h4 class="project-title text-[2rem] text-white/90 font-semibold">{project.title}</h4>
+                    <h5 class="text-base relative !leading-4 !text-white/60 !font-medium">0{project.id} / Project</h5>
+                    <h4 class="project-title !text-[2rem] !text-white/90 !font-semibold">{project.title}</h4>
                     <p class="project-description">{project.description}</p>
                     <div class="project-technologies flex flex-wrap gap-2 mt-2">
                         {project.technologies.map((tech) => (
