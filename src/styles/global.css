@@ -2,14 +2,6 @@
 
 @plugin "@midudev/tailwind-animations";
 
-@layer base {
-  @font-face {
-    font-family: "InterVariable";
-    font-display: swap !important;
-  }
-}
-
-
 @layer components {
   .hover-anim {
   transition: all 300ms ease-in-out;
