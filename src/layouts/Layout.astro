@@ -1,5 +1,8 @@
 ---
-import "@fontsource-variable/inter/latin.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
 import "/src/styles/global.css";
 ---
 
@@ -23,75 +26,73 @@ import "/src/styles/global.css";
   </body>
 </html>
 
-
 <style is:global>
-
-	html,
-	body {
-    font-family: "InterVariable", system-ui, sans-serif;
+  /* ==== RESET Y BASE ==== */
+  html,
+  body {
+    font-family: "Inter", system-ui, sans-serif;
     cursor: none;
     background-color: #0f0f0f;
-		margin: 0;
-		width: 100%;
-		height: 100%;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     scroll-behavior: smooth;
-	}
+  }
 
   @media(min-width:1024px){
     #cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-            mix-blend-mode: difference; /* La magia de la inversión de color */
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s;
-        }
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+    }
 
     body:hover #cursor {
-            opacity: 1;
-        }
+      opacity: 1;
+    }
   }
 
   @media (max-width: 1024px) {
-  #cursor { display: none !important; }
-}
-
+    #cursor { display: none !important; }
+  }
 
   /* ==== TIPOGRAFÍA GLOBAL ==== */
-h3, h4, h5, h6, p, li, span { 
-  font-family: "InterVariable", system-ui, sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.025em;
-  font-size: 14px;
-}
+  h3, h4, h5, h6, p, li, span { 
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    font-size: 14px;
+  }
 
-p { 
-  font-family: "InterVariable", system-ui, sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.025em;
-  font-size: 14px;
-  color: hsla(0, 0%, 100%, 0.75);
-}
+  p { 
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, 0.75);
+  }
 
-a { 
-  font-family: "InterVariable", system-ui, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  font-size: 14px;
-}
+  a { 
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    font-size: 14px;
+  }
 
-h1, h2 {
-  font-family: "InterVariable", system-ui, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  font-size: 30px;
-}
+  h1, h2 {
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    font-size: 30px;
+  }
 </style>
 
 <script defer type="module">
