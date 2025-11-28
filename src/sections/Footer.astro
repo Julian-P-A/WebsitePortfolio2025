@@ -1,3 +1,13 @@
+---
+import { Instagram } from "lucide-astro";
+import { Paintbrush } from "lucide-astro";
+import { Twitter } from "lucide-astro";
+import { Linkedin } from "lucide-astro";
+import { Github } from "lucide-astro";
+import { MessageCircle } from "lucide-astro";
+import { HeartPulse } from "lucide-astro";
+---
+
 <footer class="w-full py-6 mt-10 md:px-10 px-8 flex flex-col justify-between text-white/70 gap-6">
 
     <h2 class="section-aria-label leading-12 lg:leading-24 !text-[45px] lg:!text-[90px] text-center relative font-semibold text-transparent hover:text-white transition-all duration-600
@@ -7,21 +17,17 @@
         <p><strong class="text-white/90 font-semibold">© 2025 Julian Pinzón.</strong> All rights reserved.</p>
 
         <div class="social flex flex-row items-center relative group justify-center gap-4">
-            <a href="https://www.instagram.com/julian.c.ariz/" target="_blank" rel="noopener noreferrer" aria-label="instagram"><i data-lucide="instagram" class="icons-media hover-anim" ></i></a>
-            <a href="https://www.behance.net/julianariza3" target="_blank" rel="noopener noreferrer" aria-label="behance"><i data-lucide="paintbrush" class="icons-media hover-anim" ></i></a>
-            <a href="https://x.com/Julian_c_ariz" target="_blank" rel="noopener noreferrer" aria-label="twitter"><i data-lucide="twitter" class="icons-media hover-anim" ></i></a>
-            <a href="https://www.linkedin.com/in/julianjcpa/" target="_blank" rel="noopener noreferrer" aria-label="linkedin"><i data-lucide="linkedin" class="icons-media hover-anim" ></i></a>
-            <a href="https://github.com/Julian-P-A" target="_blank" rel="noopener noreferrer" aria-label="github"><i data-lucide="github" class="icons-media hover-anim" ></i></a>
-            <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto." target="_blank" rel="noopener noreferrer" aria-label="whatsapp"><i data-lucide="message-circle" class="icons-media hover-anim"></i></a>
+            <a href="https://www.instagram.com/julian.c.ariz/" target="_blank" rel="noopener noreferrer" aria-label="instagram"><Instagram class="icons-media hover-anim" /></a>
+            <a href="https://www.behance.net/julianariza3" target="_blank" rel="noopener noreferrer" aria-label="behance"><Paintbrush class="icons-media hover-anim" /></a>
+            <a href="https://x.com/Julian_c_ariz" target="_blank" rel="noopener noreferrer" aria-label="twitter"><Twitter class="icons-media hover-anim" /> </a>
+            <a href="https://www.linkedin.com/in/julianjcpa/" target="_blank" rel="noopener noreferrer" aria-label="linkedin"><Linkedin class="icons-media hover-anim" /></a>
+            <a href="https://github.com/Julian-P-A" target="_blank" rel="noopener noreferrer" aria-label="github"><Github class="icons-media hover-anim" /></a>
+            <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto." target="_blank" rel="noopener noreferrer" aria-label="whatsapp"><MessageCircle class="icons-media hover-anim"/></a>
         </div>
 
-        <p class="flex items-center relative group gap-1 font-display"><strong class="text-white/90 font-semibold ">Designed and built</strong> with the <i data-lucide="heart-pulse" class="h-5 w-5 text-white"></i> by me.</p>
+        <p class="flex items-center relative group gap-1 font-display"><strong class="text-white/90 font-semibold ">Designed and built</strong> with the <HeartPulse class="h-5 w-5 text-white"/> by me.</p>
     </div>
 <footer/>
-
-<script>
-    lucide.createIcons();
-</script>
 
 <style>
     .icons-media {

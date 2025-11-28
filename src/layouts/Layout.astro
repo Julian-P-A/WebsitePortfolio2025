@@ -5,27 +5,7 @@
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
 		<title>Portfolio Julian Pinzon</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      const cursor = document.getElementById('cursor');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-      const hoverElements = document.querySelectorAll('a, button, h1, h2, img, .group, .inner-timeline');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.width = '30px';
-                cursor.style.height = '30px';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.width = '10px';
-                cursor.style.height = '10px';
-            });
-        });
-    </script>
+    
     <!-- SEO meta -->
     <meta name="description" content="Julian Pinzon - Portafolio" />
     <meta
@@ -147,4 +127,30 @@
   }
 </style>
 
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.getElementById("cursor");
+    if (!cursor) return;
 
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+
+    const hoverElements = document.querySelectorAll(
+      "a, button, h1, h2, img, .group, .inner-timeline"
+    );
+
+    hoverElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.style.width = "30px";
+        cursor.style.height = "30px";
+      });
+
+      el.addEventListener("mouseleave", () => {
+        cursor.style.width = "10px";
+        cursor.style.height = "10px";
+      });
+    });
+  });
+</script>
