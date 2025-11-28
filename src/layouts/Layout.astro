@@ -1,3 +1,7 @@
+---
+import "@fontsource-variable/inter/wght.css";
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,13 +25,13 @@
 
 
 <style is:global>
-  @import '@fontsource-variable/inter';
   @import "/src/styles/global.css";
   @import "tailwindcss";
   @plugin "@midudev/tailwind-animations";
 
 	html,
 	body {
+    font-family: "Inter Variable", system-ui, sans-serif;
     cursor: none;
     background-color: #0f0f0f;
 		margin: 0;
