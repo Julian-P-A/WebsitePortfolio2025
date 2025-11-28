@@ -1,30 +1,39 @@
 ---
-interface Logos {
-  title: string;
-  image: string;
-}
+import { Image } from 'astro:assets';
 
-const logos: Logos[] = [
-  { title: "Photoshop",  image: "icons/carousel/ps.webp" },
-  { title: "Wordpress", image: "icons/carousel/wp.webp" },
-  { title: "Figma",  image: "icons/carousel/fig.webp" },
-  { title: "HTML",  image: "icons/carousel/html.webp" },
-  { title: "JavaScript",  image: "icons/carousel/js.webp" },
-  { title: "Astro",  image: "icons/carousel/as.webp" },
-  { title: "Ilustrator",  image: "icons/carousel/ai.webp" },
-  { title: "Tailwind",  image: "icons/carousel/tail.webp" },
-  { title: "Typescript",  image: "icons/carousel/ts.webp" },
+import ps from '../assets/icons/carousel/ps.webp';
+import wp from '../assets/icons/carousel/wp.webp';
+import fig from '../assets/icons/carousel/fig.webp';
+import html from '../assets/icons/carousel/html.webp';
+import js from '../assets/icons/carousel/js.webp';
+import as from '../assets/icons/carousel/as.webp';
+import ai from '../assets/icons/carousel/ai.webp';
+import tail from '../assets/icons/carousel/tail.webp';
+import ts from '../assets/icons/carousel/ts.webp';
+
+const logos = [
+  { title: "Photoshop", image: ps },
+  { title: "Wordpress", image: wp },
+  { title: "Figma", image: fig },
+  { title: "HTML", image: html },
+  { title: "JavaScript", image: js },
+  { title: "Astro", image: as },
+  { title: "Ilustrator", image: ai },
+  { title: "Tailwind", image: tail },
+  { title: "Typescript", image: ts },
 ];
 ---
 
+
 <div class="scroll-container overflow-hidden flex relative w-full">
     <ul class="flex animate-infinite-scroll py-25 gap-10">
-        {logos.concat(logos).map((logo, index) => (
-            <li key={index} class="flex-shrink-0 mx-2 w-24 h-24 sm:w-24 sm:h-14 sm:mx-10 hover-anim ">
-                <img src={logo.image} alt={logo.title} class="h-full w-full object-contain" loading="lazy"/>
-            </li>   
+        {logos.concat(logos).map((logo) => (
+            <li class="flex-shrink-0 mx-2 w-24 h-24 sm:w-24 sm:h-14 sm:mx-10 hover-anim">
+                <Image src={logo.image} alt={logo.title} class="h-full w-full object-contain" />
+            </li>
         ))}
-    </ul>
+</ul>
+
 </div>
 
 <style>
