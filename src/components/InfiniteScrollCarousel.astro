@@ -26,10 +26,11 @@ const logos = [
 
 
 <div class="scroll-container animate-blurred-fade-in overflow-hidden flex relative w-full">
+    
     <ul class="flex animate-infinite-scroll py-10 gap-14">
         {logos.concat(logos).map((logo) => (
             <li class="flex-shrink-0 mx-10 w-12 h-12 md:h-14 hover-anim">
-                <Image src={logo.image} alt={logo.title} class="h-full w-full object-contain" loading="eager" />
+                <Image src={logo.image} alt={logo.title} class="h-full w-full object-contain" loading="lazy" decoding="async" />
             </li>
         ))}
 </ul>
@@ -40,7 +41,8 @@ const logos = [
     .animate-infinite-scroll {
         display: flex;
         white-space: nowrap;
-        animation: infinite-scroll 40s linear infinite;
+        animation: infinite-scroll 28s linear infinite;
+        will-change: transform; 
     }
 
     .scroll-container {

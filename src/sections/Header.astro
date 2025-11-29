@@ -1,4 +1,4 @@
-<header class="hero section fixed w-full flex justify-between items-center py-6 top-0 z-50 transition-all duration-600" id="main-header" >
+<header class="hero section fixed w-full flex justify-between items-center py-6 top-0 z-50 transition-all duration-300" id="main-header" >
     
     <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
 
@@ -61,7 +61,7 @@
     }
 </style> 
 
-<script>
+<script is:inline>
     window.closeMenu = () => {
         document.getElementById('mobile-menu-toggle').click()
     }
