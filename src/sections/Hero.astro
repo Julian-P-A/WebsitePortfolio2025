@@ -1,66 +1,56 @@
 ---
 import { Image } from 'astro:assets';
-import bg from '../assets/imgs/background3.webp';
+import pp from '../assets/imgs/Profile.webp';
+import InfiniteScrollCarousel from '../components/InfiniteScrollCarousel.astro';
+import Blop from '../components/Blop.astro';
 ---
 
-<main class="hero-section h-screen w-full flex flex-col justify-center items-center px-8 md:px-10 rounded-4xl" id="home" >
-    <Image src={bg} alt="Background" format="webp" widths={[1920]} loading="eager" fetchpriority="high" class="animate-fade-in-up hero-bg absolute inset-0 w-full h-full object-cover z-1" />
-    <div class="animate-fade-in-up hero-overlay absolute inset-0 pointer z-0"></div>
+<main class="hero-section h-screen max-w-6xl mx-auto flex flex-col justify-center items-center px-8 md:px-10 my-10 gap-5" id="home">
+    <Blop />
 
-    <div class="animate-fade-in-up first-part w-full h-1/2 flex flex-col md:flex-row justify-start  md:justify-between items-start md:items-end py-22 md:py-0 z-10">
-
-        <div class="text-part w-full md:w-1/2 items-left text-white space-y-6 flex flex-col">
-            <h1 class="hero-title leading-14 md:leading-18 !text-white/60">Hey, I'm <br>
-                <span class="!text-[55px] md:!text-[90px] !text-white !font-medium">Julian Pinzon</span></h1>
+    <div class="animate-fade-in-up profile-container flex flex-row justify-start items-center gap-2 z-10">
+        <div class="profile-part w-12 h-12 rounded-full overflow-hidden border-1 border-white/20 shadow-lg z-10">
+            <Image src={pp} alt="Profile" class="w-full h-full object-cover" loading="eager" />
         </div>
 
-        <div class=" text-part-2 w-full md:w-1/2 flex flex-col items-start md:items-end text-left md:text-right space-y-2 py-0 md:py-10">
-            <h2 class=" hero-subtitle !text-[18px] md:!text-[30px] !text-white/60 font-normal"><strong class="text-white !font-bold">UI/UX</strong> Designer and <strong class="text-white !font-bold">Front-End</strong> Developer</h2>
-            <p class=" hero-description ">Focused on creating intuitive, functional, and visually engaging digital experiences. <strong>Let's build something amazing together!</strong></p>
-        </div>
+        <div class="second-part h-1/2 flex flex-col justify-center items-start z-10 gap-1">
+            <h2 class="!text-white/90 !font-tight !text-base ml-1 leading-tight">Hi, I'm Julian</h2>
 
-    </div> 
-    
-    <div class="animate-fade-in-up second-section h-1/2 grid grid-cols-4 w-full py-10 items-end text-left sm:gap-1 md:gap-10 lg:gap-30 xl:gap-60 z-10">
-        
-        <div class="value-1">
-            <h2 class="text-white "><strong class="!text-white/60">+</strong>01</h2>
-            <p class="text-white/80 font-medium">UX/UI Designer</p>
+            <span class="open-to-work inline-flex items-center gap-2 px-3 py-1 rounded-full !text-xs font-medium bg-white/10 text-white/90 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Open to Work
+            </span>
         </div>
-        <div class="value-2">
-            <h2 class="text-white"><strong class="!text-white/60">+</strong>02</h2>
-            <p class="text-white/80 font-medium">Years of Experience</p>
-        </div>
-        <div class="value-3">
-            <h2 class="text-white"><strong class="!text-white/60">+</strong>03</h2>
-            <p class="text-white/80 font-medium">Frontend Developer</p>
-        </div>
-        <div class="value-4">
-            <h2 class="text-white"><strong class="!text-white/60">+</strong>04</h2>
-            <p class="text-white/80 font-medium">Wordpress Developer</p>  
-        </div>
-
     </div>
-      
+
+    <h1 class="animate-fade-in-up delay-500 !text-white/95 hero-title !text-4xl md:!text-7xl lg:!text-8xl !font-bold text-center !leading-none w-full z-10 mt-2">
+        UX<span class="!text-white/60 hero-title !text-4xl md:!text-7xl lg:!text-8xl !font-bold !leading-none">/</span>UI Design<span class="!text-white/60 hero-title !text-4xl md:!text-7xl lg:!text-8xl !font-bold text-left !leading-none">er and</span><br />
+        Front<span class="!text-white/60 hero-title !text-4xl md:!text-7xl lg:!text-8xl !font-bold !leading-none">end</span> Developer
+    </h1>
+
+    <p class="animate-fade-in-up delay-1000 !text-white/70 hero-subtitle text-center md:!text-lg">
+        I craft engaging digital experiences through intuitive design and seamless development.
+    </p>
+
+    <div class="animate-fade-in-up delay-1000 hero-buttons flex flex-row justify-center items-center gap-6 mt-6 z-10 hover-anim">
+        <div class="animate-blurred-fade-in contact-buttom">
+            <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto."
+                class="contact-link bg-white px-4 py-[7px] rounded-lg hover-anim"
+                target="_blank" rel="noopener noreferrer">
+                Contact Me
+            </a>
+        </div>
+
+        <div class="animate-blurred-fade-in delay-2000 projects-buttom">
+            <a href="#projects" class="projects-link border border-white/30 px-4 py-[7px] rounded-lg hover-anim !text-white/90"> 
+                See My Work
+            </a>
+        </div>
+    </div>
+
+    <p class="animate-fade-in-up delay-2000 !text-white/50 hero-scroll-indicator text-sm z-10">
+        *Making things move since 2021*
+    </p>
+
+    <InfiniteScrollCarousel />
 </main>
-
-<style>
-    .hero-section {
-        position: relative;
-        overflow: hidden;
-    }   
-
-    .hero-overlay {
-        background: linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(255, 255, 255, 0.35) 5%,
-        rgba(255, 255, 255, 0.25) 10%,
-        rgba(255, 255, 255, 0.15) 15%,
-        rgba(255, 255, 255, 0.08) 20%,
-        rgba(255, 255, 255, 0.03) 25%,
-        rgba(255, 255, 255, 0.01) 30%,
-        rgba(255, 255, 255, 0) 35%
-        );
-    }
-</style>

@@ -27,10 +27,10 @@
 
     <section class="projects-section mt-20 max-w-2xl mx-auto flex flex-col text-center scroll-mt-20 gap-10" id="projects">
         <div class="section-header px-4 md:px-0 py-5 max-w-2xl mx-auto inset-0 text-center bt-10 mb-10">
-            <h3 class="section-subtitle !text-white/60 !text-[1rem] !font-medium">From Colombia / Building for anywhere</h3>
-            <h2 class="section-title !text-3xl !font-bold !text-white/90 mb-2">Frontend development
+            <h3 class="fade-up reveal delay-300 section-subtitle !text-white/60 !text-[1rem] !font-medium">From Colombia / Building for anywhere</h3>
+            <h2 class="fade-up reveal delay-700 section-title !text-3xl !font-bold !text-white/90 mb-2">Frontend development
             & strategic ui/ux design</h2>
-            <p class="section-description px-0 md:px-20">A selection of my recent work, showcasing a blend of frontend development and strategic UI/UX design to create engaging digital experiences.</p>
+            <p class="section-description px-0 md:px-20 fade-up reveal delay-1000">A selection of my recent work, showcasing a blend of frontend development and strategic UI/UX design to create engaging digital experiences.</p>
         </div>
 
         <div class="projects relative flex flex-col gap-5">
@@ -43,15 +43,15 @@
             {projects.length > 0 ? (
                     projects.map((project) => (
                     <div class="project-card flex flex-col items-start  gap-[0.2rem] px-8 py-5 w-full text-left">
-                        <h3 class="text-base relative !leading-4 !text-white/60 !font-medium">0{project.id} / Project</h5>
-                        <h4 class="project-title !text-[2rem] !text-white/90 !font-semibold">{project.title}</h4>
-                        <p class="project-description">{project.description}</p>
-                        <div class="project-technologies flex flex-wrap gap-2 mt-2">
+                        <h3 class="fade-up reveal delay-300 text-base relative !leading-4 !text-white/60 !font-medium">0{project.id} / Project</h5>
+                        <h4 class="fade-up reveal delay-300 project-title !text-[2rem] md:!leading-[3rem] !leading-10 !text-white/90 !font-semibold">{project.title}</h4>
+                        <p class="fade-up reveal delay-300 project-description">{project.description}</p>
+                        <div class="fade-up reveal delay-300 project-technologies flex flex-wrap gap-2 mt-2">
                             {project.technologies.map((tech) => (
                                 <span class="tech-badge bg-white/10 hover:bg-white hover:text-black text-white/70 px-3 py-[2px] rounded-full text-sm transition-all duration-300">{tech}</span>
                             ))}
                         </div>
-                        <div class="image-container relative group w-[450px] max-w-full my-5 mx-auto h-auto rounded-lg overflow-hidden">  
+                        <div class="fade-up reveal delay-300 image-container relative group w-[450px] max-w-full my-5 mx-auto h-auto rounded-lg overflow-hidden">  
                             <div class="overlay absolute inset-0 bg-black/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 active:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center">
                                 <a href={project.url} class="contact-link bg-white px-4 py-[5px] rounded-lg hover-anim" target="_blank" rel="noopener noreferrer">View project</a>    
                             </div>

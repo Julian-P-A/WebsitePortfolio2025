@@ -1,4 +1,4 @@
-<header class="hero section fixed w-full flex justify-between items-center py-6 md:px-10 px-8 top-0 z-50" >
+<header class="hero section fixed w-full flex justify-between items-center py-6 top-0 z-50 transition-all duration-600" id="main-header" >
     
     <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
 
@@ -20,6 +20,7 @@
     Contact Me
     </a>
 
+    <div class="max-w-6xl mx-auto flex flex-row justify-between items-center px-8 md:px-10 w-full">
     <div class="logo w-1/4 flex justify-start text-white ">
         <a href="#home" class="animate-blurred-fade-in logo-link hover-anim !font-semibold !text-xl">JulianPinzon.</a>
     </div>
@@ -36,12 +37,12 @@
     </nav>
 
     <div class="animate-blurred-fade-in contact-buttom hidden md:flex w-1/4 flex justify-end ">
-        <a href="https://api.whatsapp.com/send?phone=573166595564&text=Hola,%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto.&_browser=1"
+        <a href="https://wa.me/573166595564?text=Hola%2C%20he%20visto%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20posible%20proyecto."
         class="contact-link bg-white px-4 py-[5px] rounded-lg hover-anim" target="_blank" rel="noopener noreferrer">Contact Me</a>    
     </div> 
     
      <button type="button" onclick="closeMenu()" class="animate-blurred-fade-in menu md:hidden bg-white px-4 py-[5px] rounded-lg hover-anim">Menu</button>    
-
+    </div>
 </header>
 
 <style>
@@ -64,6 +65,25 @@
     window.closeMenu = () => {
         document.getElementById('mobile-menu-toggle').click()
     }
+
+  const header = document.getElementById("main-header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      header.classList.add(
+        "bg-gradient-to-b",
+        "from-black/90",
+        "to-black/0",
+      );
+    } else {
+      header.classList.remove(
+        "bg-gradient-to-b",
+        "from-black/90",
+        "to-black/0",
+      );
+    }
+  });
+
 </script>
 
 

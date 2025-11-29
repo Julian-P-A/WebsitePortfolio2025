@@ -25,11 +25,11 @@ const logos = [
 ---
 
 
-<div class="scroll-container overflow-hidden flex relative w-full">
-    <ul class="flex animate-infinite-scroll py-25 gap-10">
+<div class="scroll-container animate-blurred-fade-in overflow-hidden flex relative w-full">
+    <ul class="flex animate-infinite-scroll py-10 gap-14">
         {logos.concat(logos).map((logo) => (
-            <li class="flex-shrink-0 mx-2 w-24 h-24 sm:w-24 sm:h-14 sm:mx-10 hover-anim">
-                <Image src={logo.image} alt={logo.title} class="h-full w-full object-contain" />
+            <li class="flex-shrink-0 mx-10 w-12 h-12 md:h-14 hover-anim">
+                <Image src={logo.image} alt={logo.title} class="h-full w-full object-contain" loading="eager" />
             </li>
         ))}
 </ul>
@@ -57,7 +57,7 @@ const logos = [
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-50% - 20px));
+            transform: translateX(calc(-50% - 30px));
         }
     }
 
