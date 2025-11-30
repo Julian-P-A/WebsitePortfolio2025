@@ -5,6 +5,7 @@
             description: string;
             image_url: string;
             url: string;
+            project_url: string;
             technologies: string[]; 
         }
 
@@ -24,6 +25,7 @@
         } catch (err) {
         console.error("Error al cargar los projectos:", err);
         } 
+
 ---
 
     <section class="projects-section mt-20 max-w-2xl mx-auto flex flex-col text-center scroll-mt-20 gap-10" id="projects">
@@ -34,13 +36,14 @@
             <p class="section-description px-0 md:px-20 fade-up reveal delay-1000">A selection of my recent work, showcasing a blend of frontend development and strategic UI/UX design to create engaging digital experiences.</p>
         </div>
 
-        <div class="projects relative flex flex-col gap-5">
+        <div class="projects-line relative flex flex-col gap-5">
             <div class="absolute rounded-lg h-full w-[6px] left-0 overflow-hidden">
             <div id="shooting-star2" 
                 class="absolute left-[2px] w-[4px] h-60 rounded-full shadow-lg"
                 style="background: linear-gradient(to top, #ffffff,#6b6b6b , #0F0F0F);">
             </div>
         </div>
+            <div id="projects">
             {projects.length > 0 ? (
                     projects.map((project) => (
                     <div class="project-card flex flex-col items-start  gap-[0.2rem] px-8 py-5 w-full text-left">
@@ -53,8 +56,9 @@
                             ))}
                         </div>
                         <div class="fade-up reveal delay-300 image-container relative group w-[450px] max-w-full my-5 mx-auto h-auto rounded-lg overflow-hidden">  
-                            <div class="overlay absolute inset-0 bg-black/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 active:opacity-100 transition-opacity duration-300 z-10 flex flex-col items-center justify-center">
-                                <a href={project.url} class="contact-link bg-white px-4 py-[5px] rounded-lg hover-anim" target="_blank" rel="noopener noreferrer">View project</a>    
+                            <div class="overlay absolute inset-0 bg-black/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-row items-center justify-center gap-2">
+                                <a href={project.url} class="contact-link bg-white px-4 py-[8px] rounded-lg hover-anim" target="_blank" rel="noopener noreferrer">Live Site</a> 
+                                <a href={project.project_url} class="contact-link px-4 py-[5px] border border-white/30 px-4 py-[7px] rounded-lg hover-anim !text-white/90" target="_blank" rel="noopener noreferrer">Project</a>  
                             </div>
                             <img src={project.image_url} alt={project.title} class="project-image w-full h-full z-0 transform group-hover:scale-105 transition-transform duration-300" loading="lazy"/>
                         </div>
@@ -65,6 +69,7 @@
                 No hay proyectos aún.
                 </p>
             )}
+            </div>
         </div>    
     </section>
 
@@ -73,17 +78,23 @@
         opacity: 1;
     }
 
+    .design-button.active, 
+    .development-button.active  {
+        background-color: white;
+        color: black !important; 
+    }
+
     </style>
 
     <script>
     const starsecond = document.getElementById('shooting-star2');
-    const projects = document.querySelector('.projects');
+    const projectsLine = document.querySelector('.projects-line');
 
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const viewportHeight = window.innerHeight;
-        const timelineTop = projects.offsetTop;
-        const timelineHeight = projects.offsetHeight;
+        const timelineTop = projectsLine.offsetTop;
+        const timelineHeight = projectsLine.offsetHeight;
 
         let progress = (scrollTop + viewportHeight/2 - timelineTop) / timelineHeight;
 
@@ -97,7 +108,7 @@
     card.addEventListener('click', () => {
         card.classList.toggle('active');
     });
-    });
+    }); 
     </script>
 
         
