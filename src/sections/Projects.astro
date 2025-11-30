@@ -1,4 +1,4 @@
-    --- 
+--- 
         interface Project {
             id: number;
             title: string;
@@ -15,6 +15,7 @@
         const res = await fetch(WORK_URL, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
+            cache: "no-store"
         });
         if (!res.ok) throw new Error(await res.text());
             projects = await res.json();
@@ -23,7 +24,7 @@
         } catch (err) {
         console.error("Error al cargar los projectos:", err);
         } 
-    ---
+---
 
     <section class="projects-section mt-20 max-w-2xl mx-auto flex flex-col text-center scroll-mt-20 gap-10" id="projects">
         <div class="section-header px-4 md:px-0 py-5 max-w-2xl mx-auto inset-0 text-center bt-10 mb-10">
